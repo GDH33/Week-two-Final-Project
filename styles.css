@@ -57,15 +57,6 @@ h4 {
     unicode-bidi: isolate;
 }
 
-figure {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 40px;
-    margin-inline-end: 40px;
-    unicode-bidi: isolate;
-}
-
 img {
     width: 100%;
 } 
@@ -366,6 +357,7 @@ header .row {
 .features {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin-top: 40px;
 }
 
@@ -559,8 +551,18 @@ header .row {
     height: 20px;
 }
 
+.value:nth-child(1) .value__img--wrapper {
+    background-color: #9ae6b4;
+    padding: 16px;
+}
+
 .value__img1 {
     color: rgba(39, 103, 73, 1);
+}
+
+.value:nth-child(2) .value__img--wrapper {
+    background-color: #feb2b2;
+    padding: 16px;
 }
 
 .value__img2 {
@@ -578,6 +580,10 @@ header .row {
     margin-top: 16px;
     line-height: 1.625;
     color: #718096;
+}
+
+.value__btn {
+    margin-top: 28px;
 }
 
 /* PLANS */
@@ -1016,7 +1022,7 @@ footer {
 }
 
 .footer__social--link {
-    margin-left: 16px;
+   
     padding: 8px;
     background: #f7fafc;
     display: flex;
@@ -1026,8 +1032,12 @@ footer {
     z-index: 2;
     cursor: pointer;
     transition: all 300ms;
+    padding: 12px;
 }
 
+.middle {
+    margin: 0 16px 0 16px;
+}
 /*MEDIA*/
 
 @media(max-width: 640px) {
@@ -1080,6 +1090,11 @@ footer {
     #features .section__title, 
     #pricing .section__title {
         font-size: 36px;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
     }
 
     .feature__row {
@@ -1175,6 +1190,7 @@ footer {
 
     .footer__columns {
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     .footer__column {
@@ -1188,6 +1204,26 @@ footer {
         font-size: 14px;
         text-align: center;
         line-height: 1.5;
+        padding: 16px 0 16px 0;
+    }
+
+    .footer__bottom,
+    #testimonials .row,
+    #values .row,
+    #steps .row,
+    #quality .row  {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #testimonials .row {
+        align-items: center;
+    }
+    
+    .quality__img--wrapper,
+    .steps__img--wrapper,
+    .values__img  {
+        margin: 56px 0;
     }
 }
 
@@ -1198,6 +1234,7 @@ footer {
 
     .features {
         justify-content: center;
+        flex-direction: column;
     }
 
     .feature {

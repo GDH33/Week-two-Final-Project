@@ -547,6 +547,9 @@ header .row {
 }
 
 .value__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 20px;
     height: 20px;
 }
